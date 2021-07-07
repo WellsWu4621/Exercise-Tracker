@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { join } = require('path')
 
-router.use('/api', require('./exerciseRoutes.js'))
+// router.use('/api', require('./exerciseRoutes.js'))
 router.use('/api', require('./workoutRoutes.js'))
 
 router.get('/', (req, res) => {
