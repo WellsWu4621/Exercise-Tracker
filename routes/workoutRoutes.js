@@ -37,12 +37,12 @@ router.post('/workouts', (req, res) => {
 
 // PUT one workout
 router.put('/workouts/:id', (req, res) => Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } })
-  .then(() => res.sendStatus(200))
+  .then((dbWorkout) => res.json(dbWorkout))
   .catch(err => console.log(err)))
 
 // DELETE one workout
 router.delete('/workouts/:id', (req, res) => Workout.findByIdAndDelete(req.params.id)
-  .then(() => res.sendStatus(200))
+  .then((dbWorkout) => res.json(dbWorkout))
   .catch(err => console.log(err)))
 
 module.exports = router
